@@ -1,0 +1,103 @@
+:root{
+    --bg-color: linear-gradient(45deg,rgb(255, 162, 0),rgb(183, 0, 255));
+    --bg-color-title: linear-gradient(45deg,rgba(255, 0, 0, 0.76),rgb(0, 34, 255));
+}
+
+
+.spinnerTime{
+    margin: 64px;
+    width: 200px;
+    height: 200px;
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-bottom: 16px solid yellow;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+.boxTime{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 200px;
+    height: 200px;
+    margin: 32px 32px;
+    border: 1px solid black;
+    box-shadow: 16px 16px 16px black; /*se adauag - la prima cifra de px si asa mai departe daca vrem sa schimbam coltul la shadow*/
+    transition: 2s;
+}
+
+.boxTime2{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 200px;
+    height: 200px;
+    margin: 32px 32px;
+    border: 1px solid black;
+    box-shadow: 16px 16px 16px black; /*se adauag - la prima cifra de px si asa mai departe daca vrem sa schimbam coltul la shadow*/
+    transition: 2s;
+}
+
+
+
+body{
+    margin:0;
+    height:100vh;
+    display:grid;
+    place-items: center;
+    background-image:var(--bg-color);
+    background-size: 300% ;
+    animation: bg 4s infinite alternate;
+}
+
+.container{
+    width: 60vw;
+    padding: 8px 16px;
+    background-color: transparent;
+    justify-content: center;
+}
+
+.title{
+    text-transform: uppercase;
+    color:transparent;
+    background-clip: text;
+    background-image: var(--bg-color-title);
+    -webkit-background-clip: text;
+    animation: bg 2s infinite alternate;
+    background-size: 200%;
+}
+
+@keyframes bg{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+@media (min-width: 1024px) {
+    .title{
+        font-size: 3rem;
+    }
+}
+
+@media (min-width:481px) and (max-width: 1023px){
+    .title{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title{
+        font-size: 1rem;
+    }
+}
